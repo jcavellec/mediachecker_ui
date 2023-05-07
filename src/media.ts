@@ -3,4 +3,5 @@ export type Media = {
     name: string;
     size: number;
     format: string;
+    path: string;
 };

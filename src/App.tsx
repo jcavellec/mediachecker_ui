@@ -14,6 +14,7 @@ const Medias = () => {
     const handleSubmit = (event: ChangeEvent<HTMLFormElement>) => {
         event.preventDefault();
         setIsLoading(true);
+        setMedias([]);
         const url = new URL("https://localhost:7042/api/Media/Medias");
         url.searchParams.set("name", searchQuery);
         fetch(url)
@@ -56,6 +57,7 @@ const Medias = () => {
                                 </div>
                                 <div className="media-size"> {media.size}GB</div>
                                 <div className="media-format"> [{media.format}]</div>
+                                <div className="media-format"> [{media.path}]</div>
                             </li>
                         ))}
                 </div>
